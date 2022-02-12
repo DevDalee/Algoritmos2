@@ -2,7 +2,7 @@
 
 int main(){
     float x = 0, des = 0, res = 0;
-    scanf("%f", &x);
+     scanf("%f", &x);
 
     if (x <= 600){
 
