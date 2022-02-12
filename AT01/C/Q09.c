@@ -11,7 +11,6 @@ int main(){
         count++;
     }
         printf("\n");
-
         count=1;
     while( count <= lado2*(lado1-2)){
         if( (count%lado2 == 1))
@@ -25,8 +24,7 @@ int main(){
             count++;
         }
         count=1;
-        while(count<=lado2)
-        {
+        while(count<=lado2){
             printf("*");
             count++;
         }
