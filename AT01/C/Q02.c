@@ -15,7 +15,7 @@ int main(){
         res = x - des;
         printf("%.2f\n%.2f", des,res);
 
-    }else if (x > 1200 and x <= 2000){
+    }else if (x > 1200 && x <= 2000){
 
         des = x * 0.25;
         res = x - des;
