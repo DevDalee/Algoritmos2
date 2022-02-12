@@ -2,7 +2,7 @@
 
 int main(){
     int lado1, lado2, count=1;
-    printf("Lado do quadrado: ");
+   
     scanf("%d", &lado1);
     scanf("%d", &lado2);
 
