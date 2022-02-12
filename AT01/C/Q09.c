@@ -1,33 +1,31 @@
 #include <stdio.h>
 
 int main(){
-    int lado, count=1;
+    int lado1, lado2, count=1;
     printf("Lado do quadrado: ");
-    scanf("%d", &lado);
+    scanf("%d", &lado1);
+    scanf("%d", &lado2);
 
-        //Imprimindo a primeira linha
-    while(count<=lado){
+    while(count<=lado2){
         printf("*");
         count++;
     }
         printf("\n");
 
         count=1;
-    while( count <= lado*(lado-2)){
-        if( (count%lado == 1))
+    while( count <= lado2*(lado1-2)){
+        if( (count%lado2 == 1))
             printf("*");
         else
-        if( (count%lado == 0))
+        if( (count%lado2 == 0))
             printf("*\n");
         else
             printf(" ");
 
             count++;
         }
-
-        //Imprimindo a primeira linha
         count=1;
-        while(count<=lado)
+        while(count<=lado2)
         {
             printf("*");
             count++;
