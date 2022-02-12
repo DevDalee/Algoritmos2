@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "Q08.C": "cpp",
-        "Q09.C": "cpp"
+        "Q09.C": "cpp",
+        "Q01.C": "cpp",
+        "Q02.C": "cpp"
     }
 }
