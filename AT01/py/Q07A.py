@@ -4,6 +4,6 @@ i=0
 
 while x <= y:
     if x % 2 == 0:
-        i = i + x
+        i += x
     x+=1
 print(i)
