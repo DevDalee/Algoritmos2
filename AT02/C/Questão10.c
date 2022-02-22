@@ -1,121 +1,23 @@
 #include <stdio.h>
-#define true 1
-#define false 0
 
-typedef struct tipoNo
-{
-
-    char _time;
-    struct tipoNo *proximo;
-
-} tipoNo;
-
-typedef struct tipoFila
-{
-
-    tipoNo *primeiro;
-    tipoNo *ultimo;
-
-} tipoFila;
-
-void queue(tipoFila *fila);
-void push(tipoFila *fila, char _time);
-_Bool pop(tipoFila *fila, char *retorno);
-
-int main()
-{
-
-    int a, b;
-    tipoFila fila;
-    char i, timeA, timeB, retorno;
-
-    queue(&fila);
-
-    for (i = 'A'; i <= 'P'; ++i)
-        push(&fila, i);
-
-    for (i = 0; i < 15; ++i)
-    {
-
-        pop(&fila, &retorno);
-        timeA = retorno;
-        pop(&fila, &retorno);
-        timeB = retorno;
-
-        scanf("%d %d", &a, &b);
-
-        if (a > b)
-            push(&fila, timeA);
-        else
-            push(&fila, timeB);
+int main(){
+    int M, N, i;
+    char win[15];
+    while(scanf("%d %d", &M, &N) != EOF){
+        for(i = 0; i < 8; i++){
+            if(i) scanf("%d %d", &M, &N);
+            win[i] = 'A' + i*2 + (M < N);
+        }
+        for(i = 0; i < 4; i++){
+            scanf("%d %d", &M, &N);
+            win[8+i] = win[i*2 + (M < N)];
+        }
+        for(i = 0; i < 2; i++){
+            scanf("%d %d", &M, &N);
+            win[12+i] = win[8+i*2 + (M < N)];
+        }
+        scanf("%d %d", &M, &N);
+        printf("%c\n", win[12 + (M < N)]);
     }
-
-    pop(&fila, &retorno);
-    printf("%c\n", retorno);
-
     return 0;
-}
-
-void queue(tipoFila *fila)
-{
-
-    fila->primeiro = NULL;
-    fila->ultimo = NULL;
-}
-
-void push(tipoFila *fila, char _time)
-{
-
-    tipoNo *auxiliar;
-
-    auxiliar = (tipoNo *)malloc(sizeof(tipoNo));
-
-    if (!auxiliar)
-        exit(1);
-
-    if (fila->primeiro)
-    {
-
-        fila->ultimo->proximo = auxiliar;
-        auxiliar->proximo = NULL;
-    }
-    else
-        fila->primeiro = auxiliar;
-
-    fila->ultimo = auxiliar;
-    auxiliar->_time = _time;
-}
-
-_Bool pop(tipoFila *fila, char *retorno)
-{
-    tipoNo *auxiliar;
-
-    if (fila->primeiro)
-    {
-
-        if (fila->primeiro->proximo)
-        {
-
-            *retorno = fila->primeiro->_time;
-            auxiliar = fila->primeiro;
-            fila->primeiro = fila->primeiro->proximo;
-            free(auxiliar);
-            return true;
-        }
-        else
-        {
-
-            *retorno = fila->primeiro->_time;
-            auxiliar = fila->primeiro;
-            fila->primeiro = fila->ultimo = NULL;
-            free(auxiliar);
-            return true;
-        }
-    }
-    else
-    {
-
-        retorno = NULL;
-        return false;
-    }
 }
