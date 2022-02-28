@@ -1,18 +1,18 @@
 import random     
   
-def diceNumber():
+def jogada():
 
     dado1 = random.randrange(1, 7)
     dado2 = random.randrange(1, 7)
 
     return (dado1, dado2) 
 
-def twoDice(dados):
+def soma_Valores(dados):
     dado1, dado2 = dados
     print("Soma dos dados {} + {} = {}".format(dado1, dado2, sum(dados)))
 
-value = diceNumber()
-twoDice(value)
+value = jogada()
+soma_Valores(value)
 
 soma_dados = sum(value)
 
@@ -29,8 +29,8 @@ else:
  
 
 while result == " O ponto é ":
-    value = diceNumber()
-    twoDice(value)
+    value = jogada()
+    soma_Valores(value)
     soma_dados = sum(value)
      
     if soma_dados == pontos_atuais:
