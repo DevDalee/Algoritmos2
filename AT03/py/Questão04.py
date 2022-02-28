@@ -1,25 +1,42 @@
-import random
+import random     
+  
+def diceNumber():
 
-d1 = random.randint(1, 6)
-d2 = random.randint(1, 6)
+    dado1 = random.randrange(1, 7)
+    dado2 = random.randrange(1, 7)
 
-x = d1 + d2
-y = 0 
+    return (dado1, dado2) 
 
-if x == 7 or x == 11:
-    print("Soma dos dados {} + {} = {}\n".format(d1,d2,x))
+def twoDice(dados):
+    dado1, dado2 = dados
+    print("Soma dos dados {} + {} = {}".format(dado1, dado2, sum(dados)))
+
+value = diceNumber()
+twoDice(value)
+
+soma_dados = sum(value)
+
+if soma_dados in (7, 11):
+    result = " O jogador ganhou :) "
     print("O jogador ganhou :)")
-elif x == 2 or x == 3 or x == 12:
-    print("Soma dos dados {} + {} = {}\n".format(d1,d2,x))
-    print("O jogador perdeu :(")
+elif soma_dados in (2, 3, 12):
+    result = " O jogador perdeu :( "
+    print(" O jogador perdeu :( ")
 else: 
-    while(x != y):
-        d1 = random.randint(1, 6)
-        d2 = random.randint(1, 6)
-        y = d1 + d2
-    if y == 7: 
-        print("Soma dos dados {} + {} = {}\n".format(d1,d2,y))
-        print("O jogador perdeu :(")
-    elif x == y:
-        print("Soma dos dados {} + {} = {}\n".format(d1,d2,y))
+    result = " O ponto é "
+    pontos_atuais = soma_dados
+    print("O ponto é ", pontos_atuais)
+ 
+
+while result == " O ponto é ":
+    value = diceNumber()
+    twoDice(value)
+    soma_dados = sum(value)
+     
+    if soma_dados == pontos_atuais:
+        result = " O jogador ganhou :) "
         print("O jogador ganhou :)")
+         
+    elif soma_dados == 7:
+        result = " O jogador perdeu :( "
+        print("O jogador perdeu :( ")
