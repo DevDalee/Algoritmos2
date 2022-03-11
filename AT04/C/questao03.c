@@ -21,7 +21,8 @@ void main()
 
     srand(time(NULL));
     preenche();
-
+ 
+ 
     scanf("%d", &opc);
 
     if (opc == 1)
