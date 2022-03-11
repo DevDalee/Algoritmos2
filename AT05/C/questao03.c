@@ -1,19 +1,23 @@
 #include <stdio.h>
 #include <ctype.h>
+#define T 200
 
-char frase[200];
-int count=0, i=0;
+char frase[T];
+char res[T];
+int  i=0;
 
-void maiusculo(char *sPrt[200]){
-    while(frase[i] < count){
-        *sPrt[i] = toupper(frase[i]);
-        frase[i] = *sPrt[i];
+void maiusculo(char *sPrt[T]){
+
+    while(frase[i] != '\0'){
+        *sPrt[i]
+        res[i] = toupper();
+        printf("%d", i);
+        i++;
     }
 }
 
 int main(){
-    for(int i = 0; (frase[i]=getchar())!='\n'; i++){} 
-    count=i;
+    fgets(frase, 200, stdin); 
     maiusculo(&frase);
-    printf("%s", frase);
+    printf("%s", res);
 }
