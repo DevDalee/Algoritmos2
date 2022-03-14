@@ -1,14 +1,12 @@
 #include <stdio.h>
-
-int somaDoisNumeros( int num1, int num2) {
-   return num1 + num2; //<-- Retorna a soma
-}
+float rz1, iz1, rz2, iz2, rz3 = 0, iz3 = 0;
 
 int main(){
-   int N, num1, num2;
-
-   scanf("%d", &num1);
-   scanf("%d", &num2);
-   N = somaDoisNumeros(num1, num2);
-
+   scanf("%f %f %f %f", &rz1, &iz1, &rz2, &iz2);
+   somaC(&rz1, &iz1, &rz2, &iz2);
+   printf("%.1f + %.1fi", rz3, iz3);
+}
+void somaC( float rz1, float iz1, float rz2, float iz2, float *rz3, float *iz3){
+   *rz3 = rz1 + rz2;
+   *iz3 = iz1 + iz2;
 }
