@@ -1,26 +1,23 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <ctype.h>
-#define T 200
 
-char frase[T];
-int  i=0;
-
-void maiusculo(char *sPrt[T]);
-
+void Maiusculo (char *sPrt);
 
 int main(){
-    fgets(frase, 200, stdin); 
-    maiusculo( frase );
-    printf("%s", frase);
+    char string[] = "";
+    gets(string);
+    Maiusculo(string);
+    printf("%s", string);
+    return 0;
 }
 
-void maiusculo(char *sPrt[T]){
+void Maiusculo(char *sPrt){
 
     while(*sPrt != '\0'){
-        if ( islower(*sPrt)){
+        if(islower(*sPrt)){
             *sPrt = toupper(*sPrt);
         }
-        ++sPrt;
+
+        *sPrt++;
     }
 }
