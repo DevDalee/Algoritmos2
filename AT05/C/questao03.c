@@ -11,6 +11,7 @@ int main(){
     return 0;
 }
 
+
 void Maiusculo(char *sPrt){
 
     while(*sPrt != '\0'){
