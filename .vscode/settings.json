@@ -2,7 +2,8 @@
     "files.associations": {
         "string": "c",
         "sstream": "c",
-        "regex": "c"
+        "regex": "c",
+        "stdio.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
