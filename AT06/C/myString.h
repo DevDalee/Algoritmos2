@@ -45,8 +45,14 @@ void strcat_and_strncat(){
     printf("Strncat: %s\n\n\n\n", s3);
 }
 
-//void strcmp_and_strncmp(){
-//    const char *sar1 = "Feliz Ano Novo";
-//    const char *sar2 = "Feliz Ano Novo";
-//    const char *sar3 = "Boas Férias";
-//}
+void strcmp_and_strncmp(){
+    const char *sr1 = "Feliz Ano Novo";
+    const char *sr2 = "Feliz Ano Novo";
+    const char *sr3 = "Boas Férias";
+    int aux;
+
+    if (sr1[0] == sr2[0]){
+        printf("%d", aux=0);
+    }else
+    
+}
