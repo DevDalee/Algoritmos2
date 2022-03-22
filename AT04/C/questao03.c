@@ -5,8 +5,7 @@ void preenche();
 void imprime();
 void embaralha();
 
-struct carta
-{
+struct carta{
     int naipe, valor;
 };
 
