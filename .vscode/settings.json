@@ -3,7 +3,8 @@
         "string": "c",
         "sstream": "c",
         "regex": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "random": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

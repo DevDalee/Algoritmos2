@@ -9,8 +9,8 @@ int main(){
     struct distancia c[1];
     float result=0;
 
-    scanf("%d %d", &c[1].x1,&c[1].y1);
-    scanf("%d %d", &c[2].x2,&c[2].y2);
+    scanf("%f %f", &c[1].x1,&c[1].y1);
+    scanf("%f %f", &c[2].x2,&c[2].y2);
 
     result = sqrt(pow(c[2].x2-c[1].x1,2) + pow(c[2].y2-c[1].y1,2));
 
