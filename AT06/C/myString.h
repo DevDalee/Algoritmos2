@@ -49,10 +49,11 @@ void strcmp_and_strncmp(){
     const char *sr1 = "Feliz Ano Novo";
     const char *sr2 = "Feliz Ano Novo";
     const char *sr3 = "Boas Férias";
-    int aux;
 
-    if (sr1[0] == sr2[0]){
-        printf("%d", aux=0);
-    }else
-    
+    printf("Comparacao entre sr1 e sr2: %2d\n", strcmp(sr1,sr2));
+    printf("Comparacao entre sr1 e sr3: %2d\n", strcmp(sr1,sr3));
+    printf("Comparacao entre sr3 e sr1: %2d\n\n", strcmp(sr3,sr1));
+    printf("Comparacao entre a casa 6 de: sr1 e sr3: %2d\n", strncmp(sr1, sr3, 6));
+    printf("Comparacao entre a casa 7 de: sr1 e sr3: %2d\n", strncmp(sr1, sr3, 7));
+    printf("Comparacao entre a casa 7 de: sr3 e sr1: %2d\n", strncmp(sr3, sr1, 7));
 }
