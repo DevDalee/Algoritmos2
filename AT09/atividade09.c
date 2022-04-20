@@ -1,48 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define MAX 1000
+#include <string.h>
+#include <time.h>
 
-typedef struct {
-   int codigo;
-   char nomeV[20];
-}reg;
+struct locacao{
+    int codigo;
+    char nome[20];
+};
+typedef struct locacao Lista_locacao[1000];
 
-typedef struct{
-    reg itens[MAX+1];
-    int tamanho;
-}t;
+int main(){
+    int chave, soma_sequencial = 0, codigo_esc = 0, remove_cod = 0;
+    char nomev[20] = "Gol";
+    int chave2;
+    char nome_veiculo[20];
 
-void insere ( reg, t){
-    if (t.tamanho == MAX){
-        printf("Erro:Tabela Cheia\n");
-    } else {
-        t.tamanho++;
-        reg.codigo[t.tamanho] = srand() % 1000;
-        reg.nomeV[t.tamanho] = 'Gol';
-    }
-}
+    srand((unsigned)time(NULL));
+    Lista_locacao lista;
 
-/*int pesquisa (int codigo, t){
-    int i,c;
-    t.itens[0].codigo = codigo;
-    for ( i = t.tamanho; t.itens[i].codigo != codigo; i--){
-        return i;
-        c++;
-    }   
-}*/ 
-void main(){
-    int i=0;
-    srand(time(0));
-    while (i != MAX){
-        insere();
-        i++;
+    for(int i = 1; i < 1001; i++){
+        strcpy(lista[i].nome, "Gol");
+        lista[i].codigo = rand()%1000;
     }
 
-    /*for (int j = 1; j < 101; j++){
-        reg.codigo[j];
-        pesquisa(reg.codigo[j], tabela);
-    }
-    printf("Registros percorridos pela pesquisa eh: %d", c);
-    */
-       
+
+    return 0;
 }
